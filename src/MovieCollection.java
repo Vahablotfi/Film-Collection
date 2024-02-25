@@ -1,16 +1,13 @@
+import java.util.ArrayList;
+
 public class MovieCollection {
-    private Movie[] movieList = new Movie[5];
+    private ArrayList<Movie> movieList = new ArrayList<Movie>();
 
     public void MovieCollection(Movie movie) {
-        for (int i = 0; i < movieList.length; i++) {
-            if (movieList[i] == null) {
-                movieList[i] = movie;
-                break;
-            }
-        }
+        movieList.add(movie);
     }
 
-    public Movie[] getMovieList() {
+    public ArrayList<Movie> getMovieList() {
         return movieList;
     }
 
