@@ -13,13 +13,29 @@ public class MovieCollection {
 
     public void showListItems() {
         for (Movie items : movieList) {
-            if (items != null) {
-
-                System.out.println(items.getTitle()
-                        + " is a " + items.getLengthInMinutes()
-                        + " minutes long movie. And was created in "
-                        + items.getYearCreated() + " by " + items.getDirector());
-            }
+            items.movieInfo();
         }
     }
+
+    public ArrayList<Movie> searchMovie(String movieName){
+        var foundMovies = new ArrayList<Movie>();
+        for (Movie items : movieList){
+            if (items.getTitle().toLowerCase().contains(movieName.toLowerCase())){
+                foundMovies.add(items);
+            }
+
+        }
+        if (foundMovies.isEmpty()){
+            System.out.println("This film does not exist in the list.");
+        } else{
+            for (Movie items : foundMovies){
+                items.movieInfo();
+            }
+        }
+        return foundMovies;
+
+    }
 }
+
+
+

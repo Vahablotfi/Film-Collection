@@ -42,5 +42,17 @@ public class Movie {
         return isInColor;
     }
 
+    public void movieInfo(){
+        String coloredMovie = (isInColor) ? "Yes" : "No";
+        System.out.println(
+                "Movie Title: "+ title +"\n"+
+                "Movie Director: "+director +"\n"+
+                "Year of Publish: "+ yearCreated +"\n"+
+                "Colored Movie: "+coloredMovie +"\n"+
+                "Length in minutes: "+ lengthInMinutes+"\n"+
+                "Genre: "+genre+"\n"
+                 );
+    }
+
 
 }
