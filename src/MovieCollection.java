@@ -1,9 +1,12 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class MovieCollection {
     private ArrayList<Movie> movieList = new ArrayList<Movie>();
+    static Scanner scannerObject = new Scanner(System.in);
+    private Movie movie;
 
-    public void MovieCollection(Movie movie) {
+    public void addToList(Movie movie) {
         movieList.add(movie);
     }
 
@@ -17,25 +20,30 @@ public class MovieCollection {
         }
     }
 
-    public ArrayList<Movie> searchMovie(String movieName){
+    public ArrayList<Movie> searchMovie(String movieName) {
+
         var foundMovies = new ArrayList<Movie>();
-        for (Movie items : movieList){
-            if (items.getTitle().toLowerCase().contains(movieName.toLowerCase())){
+        for (Movie items : movieList) {
+            if (items.getTitle().toLowerCase().contains(movieName.toLowerCase())) {
                 foundMovies.add(items);
             }
 
         }
-        if (foundMovies.isEmpty()){
-            System.out.println("This film does not exist in the list.");
-        } else{
-            for (Movie items : foundMovies){
-                items.movieInfo();
-            }
-        }
+
+
         return foundMovies;
 
     }
+
+
 }
+
+
+
+
+
+
+
 
 
 
