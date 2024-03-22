@@ -197,5 +197,8 @@ public class UserInterface {
 
     }
 
+    public void test(){
+        System.out.println("This method is for test.");
+    }
 }
 
